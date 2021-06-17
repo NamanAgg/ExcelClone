@@ -1,0 +1,499 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    color: #444;
+    position: relative;
+}
+
+.title-bar{
+    height: 5vh;
+    width: 100vw;
+    background-color: #217346;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-bar{
+    height: 5vh;
+    width: 100vw;
+    background-color: #217346;
+    color: #fff;
+    display: flex;
+
+}
+
+.menu-bar-item{
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.menu-bar-item.selected{
+    background-color: #fff;
+    color: #217346;
+}
+
+.menu-bar-item:hover{
+    background-color: #0d4225;
+    cursor: pointer;
+}
+.menu-bar-item.selected:hover{
+  background-color: #fff;
+  cursor: default;
+}
+
+.menu-bar-icon{
+   display: flex;
+   height: 6vh;
+   align-items: center;
+}
+
+.menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    height: 100%;
+}
+
+.menu-icon:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.menu-selector{
+    height: 4.5vh;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    font-size: 1rem;
+}
+
+#font-family{
+    font-family: 'Noto Sans';
+    width: 10vw;
+    min-width: 127px;
+}
+
+#font-size{
+    width: 3vw;
+    min-width: 55px;
+}
+
+.formula-bar{
+    width:100vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: lightgray;
+}
+
+.formula-editor{
+    background-color: #fff;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+    overflow: hidden;
+    align-items: center;
+}
+
+#selected-cell{
+    width:18vw;
+}
+
+#function-sign{
+    width:6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#function-input{
+    width:calc(100vw - 18vw - 6vw);
+}
+
+.data-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 75vh;
+    width: 100vw;
+}
+
+#select-all{
+    width: 25px;
+    height: 25px;
+    border: 1px solid lightgray;
+}
+
+#coloumns{
+    width: calc(100vw - 25px);
+    height: 25px;
+    border: 1px solid lightgray;
+    display: flex;
+    overflow: hidden;
+}
+
+#rows{
+    width:25px;
+    height: calc(75vh - 25px);
+    border: 1px solid lightgray;
+    overflow: hidden;
+}
+ 
+#cells{
+    width:calc(100vw - 25px);
+    height: calc(75vh - 25px);
+    border: 1px solid lightgray;
+    overflow: scroll;
+    position: relative;
+}
+
+.coloumn-name{
+    width:100px;
+    min-width:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid lightgray;
+}
+
+.row-name{
+    width:25px;
+    min-height: 25px;
+    height: 25px;
+    border-bottom: 0.5px solid lightgray;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.cell-row{
+    display: flex;
+}
+
+.input-cell{
+    height:25px;
+    width:100px;
+    border-right:0.5px solid lightgray;
+    border-bottom: 0.5px solid lightgray;
+    min-width: 100px;
+    min-height: 25px;
+    font-family: 'Noto Sans';
+    font-size: 14px;
+    overflow: hidden;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-cell.selected{
+    border: 3px solid #217346;
+    outline:#217346;
+}
+
+.input-cell.top-selected {
+    border-top: none;
+}
+
+.input-cell.bottom-selected {
+    border-bottom: 0.5px solid lightgray
+}
+
+
+
+.input-cell.left-selected {
+    border-left: none;
+}
+
+.input-cell.right-selected {
+    border-right: 0.5px solid lightgray;
+}
+
+.menu-icon.selected{
+    background-color: lightgray;
+}
+
+#color-fill-icon{
+    border-bottom: 3px solid #fff;
+    padding-bottom: 1.5px;
+}
+
+#text-fill-icon{
+    border-bottom: 3px solid #444;
+    padding-bottom: 1.5px;
+}
+
+.sheet-bar {
+    height: 4vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+
+.sheet-scroller{
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.sheet-tab-container{
+    height: 4vh;
+    display: flex;
+    margin-right: 10px;
+    align-items: center;
+    border-left: 0.5px solid lightgray;
+}
+
+.sheet-tab{
+    
+    border-right: 0.5px solid lightgray;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+}
+.sheet-tab:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.sheet-tab.selected{
+    color: #217346;
+    border-bottom: 4px solid #217346;
+}
+
+.sheet-tab.selected:hover{
+    background-color: #fff;
+    cursor: default;
+
+}
+
+.addSheet{
+    color: #217346;
+   
+    margin-right: 10px;
+}
+
+.addSheet:hover,.scroller:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.scroller{
+    font-size: 30px;
+}
+
+
+.sheet-options-modal{
+    position: absolute;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 13%) 0px 6.4px 14.4px 0px, rgb(0 0 0 / 11%) 0px 1.2px 3.6px 0px;
+
+}
+
+.option{
+    padding: 7px 15px 7px 15px;
+}
+
+.option:hover{
+    background-color: lightgray;
+    cursor:default;
+}
+
+.sheet-modal-parent{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sheet-rename-modal,.sheet-delete-modal{
+    position: absolute;
+    background-color: #fff;
+    box-shadow: rgb(0 0 0 / 13%) 0px 6.4px 14.4px 0px, rgb(0 0 0 / 11%) 0px 1.2px 3.6px 0px;
+    min-width: 400px;
+    padding: 15px;
+    
+}
+
+.sheet-modal-title{
+    text-align: center;
+    color: #217346;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.sheet-modal-input-container,.sheet-modal-detail-container{
+    padding: 20px;
+}
+
+.sheet-modal-input-title{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.sheet-modal-input{
+  outline-color: #217346;
+  width: 100%;
+  font-size: 1.5rem;
+  height: 2rem;
+}
+
+.sheet-modal-confirmation{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-evenly;
+}
+
+.btn{
+    border: 1px solid;
+    width: 105px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ok-btn,.delete-btn{
+    background-color: #217346;
+    color: #fff;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.ok-btn:hover,.delete-btn:hover{
+    cursor: pointer;
+    background-color: #0d4225;
+}
+
+.cancel-btn{
+    border-radius: 5px;
+    height: 40px;
+}
+.cancel-btn:hover{
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+}
+
+.delete-modal-confirmation{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sheet-modal-detail-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sheet-modal-detail-title{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.delete-icon,.cancel-icon{
+    margin-right: 5px;
+}
+
+.loader-parent{
+    color: rgb(9,147,0);
+    flex-direction: column;
+}
+
+.loading{
+    color:rgb(12, 136, 3);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.error{
+    color: red;
+    font-size: 15px;
+}
+/* for removing scrolling and dispaly in view */
+.sheet-tab-container::-webkit-scrollbar {
+    display: none;
+}
+
+.sheet-tab-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: hidden;
+}
+
+.file-modal-parent{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0vw;
+    height: 100vh;
+    display: flex;
+}
+.options-modal{
+    height: 100vh;
+    width: 12rem;
+    background-color: #217346;
+    color: #fff;
+}
+.transparent-file-modal{
+    height: 100vh;
+    width: 50vw;
+}
+
+.recent-files-modal{
+    height: 100vh;
+    width: calc(50vw - 12rem);
+    background-color: #fff;
+}
+
+.close,.new,.open,.save{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.close-icon,.new-icon,.save-icon,.open-icon{
+    position: absolute;
+    left: 2rem;
+}
+.close-icon{
+    transform: rotate(90deg);
+}
+
+.close:hover, .new:hover, .save:hover, .open:hover {
+    background-color:#0d4225;
+    cursor: pointer;
+}
